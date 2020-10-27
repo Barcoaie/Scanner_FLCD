@@ -2,6 +2,8 @@
 #include "HashTable.h"
 #include "PIF.h"
 #include <fstream>
+#include <map>
+#include <iostream>
 class Scanner
 {
 private:
@@ -9,8 +11,14 @@ private:
 	PIF * pif;
 public:
 	Scanner();
-	void scan(std::string file);
-	void readLine(std::string line);
+	std::map<std::string, int> generate_tokens(std::string file);
+	bool scan(std::string file, std::map<std::string, int> tokens);
+	bool Separator(char c);
+	bool Identifier(std::string token);
+	bool Constant(std::string token);
+	bool Operator(char c);
+	HashTable getHT();
+	PIF getPIF();
 	~Scanner();
 };
 

@@ -1,0 +1,12 @@
+breakfast
+lil_tweet sum := 0;
+lil_tweet size;
+register size;
+lil_tweet vector[size];
+step_by_step lil_tweet i:=0 i<size 1
+{
+register vector[i];
+sum += vector[i];
+}
+break_an_egg ("sum is" sum);
+breakfast_done

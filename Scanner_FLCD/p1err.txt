@@ -1,0 +1,23 @@
+breakfast 
+lil_tweet val1;
+lil_tweet val2;
+lil_tweet val3;
+register val1;
+still_boiling same val1 0
+register val1;
+register val2;
+val3 := 1csf;
+ham_sand res := "there you ha"ve it";
+lil_tweet delta;
+delta := b*b - 4*a*c;
+you_egg same delta 0
+{
+lil_tweet x := -b/2*a;
+break_an_egg x;
+}
+you egg smaller delta 0
+break_an_egg (no real solution)
+lil_tweet x1 := (-b + rad delta)/2*a;
+lil_tweet x2 := (-b - rad delta)/2*a;
+break_an_egg (x1 x2);
+breakfast_done

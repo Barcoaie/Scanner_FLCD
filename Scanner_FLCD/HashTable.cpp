@@ -17,13 +17,20 @@ int HashTable::insertItem(std::string key)
 	if (curr == nullptr) {
 		table[index] = nod;
 	}
-	else {
-		while (curr->next != nullptr) {
-			curr = curr->next;
-		}
-		curr->next = nod;
-	}
 	return index;
+}
+
+int HashTable::searchItem(std::string key)
+{
+	int hash_value = hash_funct(key);
+	node *current = table[hash_value];
+	if (current == nullptr)
+		return -1;
+	while (current != nullptr) {
+		if (current->data.compare(key) == 0) return hash_value;
+		current = current->next;
+	}
+	return -1;
 }
 
 int HashTable::hash_funct(std::string key)

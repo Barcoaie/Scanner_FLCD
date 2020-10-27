@@ -1,0 +1,12 @@
+breakfast 
+lil_tweet val; 
+register val; 
+you_egg same val 1 
+break_an_egg 1; 
+you_egg !same val 2 || divisible val 2 
+break_an_egg 1; 
+step_by_step lil_tweet d := 3 d * d <= val / 2 2 
+you_egg divisible val d 
+break_an_egg 1; 
+break_an_egg 0; 
+breakfast_done
