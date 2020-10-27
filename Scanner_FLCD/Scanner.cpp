@@ -122,7 +122,7 @@ bool Scanner::Identifier(std::string token)
 			if (underscore && afterus) afterus = false;
 			if (digit) return false;
 		}
-		return false;
+		else return false;
 	}
 	if (underscore && afterus) return false;
 	return true;
@@ -139,7 +139,7 @@ bool Scanner::Constant(std::string token)
 	if (first_char == 'n' && token.substr(0, 3).compare("not") != 0) return false;
 
 	if (first_char == '\"') {
-		char last_char = ' ';
+		char last_char = '?';
 		for (char& c : token.substr(1)) {
 			if (last_char == '\"') return false;
 			if ((c < '0' || c > '9') && (c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && c != ' ' &&c != '\"') return false;
@@ -173,7 +173,7 @@ bool Scanner::Constant(std::string token)
 	}
 
 
-	return true;
+	return false;
 }
 
 bool Scanner::Operator(char c)

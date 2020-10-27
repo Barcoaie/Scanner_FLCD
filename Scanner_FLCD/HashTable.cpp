@@ -43,6 +43,21 @@ int HashTable::hash_funct(std::string key)
 }
 
 
+std::string HashTable::prettyPrint()
+{
+	std::string res;
+	for (int i = 0; i < 31; i++) {
+		res = res + std::to_string(i) + ": ";
+		node * curr = table[i];
+		while (curr != nullptr) {
+			res = res + curr->data;
+			curr = curr->next;
+		}
+		res = res + "\n";
+	}
+	return res;
+}
+
 HashTable::~HashTable()
 {
 }

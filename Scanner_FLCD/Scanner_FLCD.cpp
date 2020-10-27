@@ -20,11 +20,16 @@ int main()
 	//	std::cout << n.first<<" " ;
 	//}
 
-	bool trial1 = scanner->scan("p1err.txt", tokens);
+	bool trial1 = scanner->scan("p1.txt", tokens);
 
 	if (trial1) {
-		std::cout << "\n\n\n\nworked!";
+		std::cout << "\n\n\n";
+		std::cout << "---------------Symbol Table\n";
+		std::cout << scanner->getHT().prettyPrint() << "\n";
+		std::cout << "---------------PIF\n";
+		std::cout << scanner->getPIF().prettyPrint() << "\n";
 	}
+	return 0;
 }
 
 void testPIF() {
