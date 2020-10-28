@@ -5,6 +5,7 @@
 #include "PIF.h"
 #include "HashTable.h"
 #include "Scanner.h"
+#include <fstream>
 void testPIF();
 void testST();
 
@@ -20,14 +21,25 @@ int main()
 	//	std::cout << n.first<<" " ;
 	//}
 
+	std::ofstream fout("ST.out");
+	std::ofstream gout("PIF.out");
+
 	bool trial1 = scanner->scan("p1.txt", tokens);
 
 	if (trial1) {
 		std::cout << "\n\n\n";
 		std::cout << "---------------Symbol Table\n";
 		std::cout << scanner->getHT().prettyPrint() << "\n";
+		fout << "Symbol Table using a hash function\n";
+		fout << scanner->getHT().prettyPrint() << "\n";
 		std::cout << "---------------PIF\n";
+		gout << "PIF" << "\n";
+		gout << scanner->getPIF().prettyPrint() << "\n";
 		std::cout << scanner->getPIF().prettyPrint() << "\n";
+	}
+	else {
+		std::cout << "\n\n\n";
+		std::cout << "lexical error";
 	}
 	return 0;
 }
